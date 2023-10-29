@@ -1,0 +1,69 @@
+Data Security and Data Governance
+Updated: Mar 7
+
+Force 1: Information wants to be free
+//
+Central Idea: 
+
+Shift from perimeter based surveillance and tactical blocking to data governance approaches where data protection is a pervasive part of data handling. 
+
+
+In the last blog I discussed the 6 fundamental forces that shape information security risk. Thinking about this can be interesting but it can also be a bit academic unless we develop more cohesive strategies to deal with these forces. In this, and each of the following posts, I’ll cover the approaches to handling the symptoms and then cover what we might do to handle the force itself.
+
+
+Let’s start this exploration with Force 1: Information wants to be free. I will start with some humility - this is difficult. It is especially difficult since we’re all so used to dealing with the symptoms of poor information control that it is hard to step back. But, I have seen and implemented some useful approaches that do deal with the force. 
+
+
+First, a bit of framing on the notion of information wanting to be free. I am going to cover this in terms of “free” as in that information wants to be unfettered, to move around, to be available or to diffuse everywhere. I’m not going to talk about the original Stewart Brand, more activist, formulation that is about the tension between information being free (cost) to access and widely available for the good of everyone. 
+
+
+Treating Symptoms - dealing with what the force does
+
+There are whole disciplines and product categories just for dealing with the symptoms of this force.
+
+Access Control. Access control in all its form: on files, objects, processes and other resources at the level of whole data sets down to individual data fields, items, functions or transactions. Such access control policies are implemented in discretionary ways (DAC - discretionary access control) as determined by a resource owner or system / access administrator. Such discretionary access can be implemented more effectively with less toil by incorporating privileges into roles (RBAC - role based access control), grouping subjects together for collective assignment, and using attributes of who or what needs access. Such, so called ABAC (attribute based access control) can be a powerful programmatic means of enforcing dynamic access control rules e.g. person A can access resource X if they have role B and have attributes designating they have been trained in subject Y and have not accessed resource Z in the past 2 weeks.  
+
+
+Provisioning Controls.  Arguably a subset of access controls, but often handled as a product set in its own right to work across multiple different identity, authentication and authorization systems. Such provisioning systems facilitate the workflow (automated, rule driven or otherwise) to provision access by, say, group assignment to roles and people to groups. 
+
+
+Boundary Protection and Cross Domain Approaches. Implementation of various guards to regulate the flow of all information, or specifically labeled content in between environments (domains) of different trust levels. These can take many forms from specialized data flow controls through to coarse-grained proxies. 
+
+
+Data Leakage Prevention (DLP). There’s a whole field of DLP controls and products either on end points or at boundaries that seek to detect and often prevent the unauthorized flow of information. These are usually, at most, partially effective given the inherent limitation on placement to have sufficient visibility. They also have a tough time decoding embedded protocols, dealing with different file types and demultiplexing more complex transfer protocols. Additionally, they (by definition) can’t handle properly encrypted content or streaming data. 
+
+
+Encryption. The use of cryptographic controls appears in both the treatment of symptoms as well as the force. Effectiveness depends on how well encryption is deployed and at what level. One classic, naive, application is to insist on full disk or other storage encryption as a means of protecting information from all theft vectors. This may only protect from the theft of disks or other media because most unauthorized access actually stems from the compromise of software, systems or human accounts. In those situations the storage system will merrily decrypt the data for the attacker. However, because of outrage rather than hazard we encrypt storage anyway e.g. if you have a data breach and you are asked, “Was the data encrypted?”, then if you can’t answer yes (whether or not that would matter in that particular context) then you’re going to be pilloried in any case. Of course, I’m overly simplifying here for illustration, there are plenty of appropriate uses of encrypted storage in multi-tenant or other shared environments that are of utility if the cryptographic keys are correctly allocated and protected in the right context. 
+
+I could list more tactical controls that treat the symptoms of information’s desire to be free. I’m not saying these are bad. Indeed, many of these controls are absolutely necessary because the alternatives may not be viable, and even if you have alternatives then these controls will be part of the implementation of those more strategic approaches. 
+
+
+The tactical controls appear to be only treating symptoms because they require so much administrative toil to operate, require so much complexity to assure coverage and require constant tuning to remain even partially effective. A set of strategic controls that deal with the force, not the symptoms can remedy this. Let’s look at what these might be. 
+
+
+Treating Causes - dealing with the force itself
+Mandatory Access Controls. Mandatory access control (MAC), which can be used in addition to discretionary access control is not pervasively used outside of clearance / classification and multi-level security (MLS) environments. However, there is value to take at least some part of this approach in many corporate situations as well. This could be coarse grained, where information domains are established and flow between them is tightly regulated in addition to fine grained approaches driven by annotating data with labels that describe what that information is. Once data is annotated or labeled then policy enforcement points (of various types) can be instructed to enforce usage controls according to those labels. For example, data flows between applications, databases, and messaging systems can be regulated with policy guards that enforce access based on the labels irrespective of what a particular developer or administrator may seek to override. Of course, I’m simplifying much here including how to segregate privilege so the administrators cannot override the policy enforcement or the labels. But you get the point that even outside of classic MAC / MLS environments a data label driven notion of mandatory access control is a dramatically improved mental model to regulate data flow. It can also balance need to know vs. need to restrict policies without the complexity of discretionary access controls. There can be other elements to this such as default denying whole data flows. While not quite MAC, but a MAC-like principle, I once had some success in one organization with a control from Ionic Security (since acquired) where we implemented a policy that no data could be uploaded to any external web site (no matter what data) without that site being explicitly allow-listed. This was a broadsword of a control but highly effective in reducing the potential leakage surface of the organization while still permitting flexibility for legitimate workflows. It was also a great last line of defense for any malware driven data exfiltration. 
+
+
+Labeling / Annotations. Data annotations and labeling can be useful for many other requirements beyond security such as encoding privacy rules. There are also opportunities to think of policies as not just constraints but as obligations. For example, data with a particular label shall only be accessed for a particular purpose by specifically authorized systems (constraint) and should be always replicated and available in 3 geographically dispersed zones (obligation). Labels let you start reasoning this way. Clearly, there’s no magic here, it’s an intense taxonomic and ontological feat to make labeling workable and needs to be part of a mature data governance regime. 
+
+
+Data Governance. Speaking of this, data governance is typically only a prominent topic in highly regulated organizations or those with such significant amounts of data that it needs discipline to ensure full value from their information. There are whole sets of industry specific regulations that prescribe data handling approaches for many types of information flows that includes lineage, labeling and testing (for example: BCBS 239).  
+
+
+Rights Management. Despite some use, this seems to have become less visible as a concept largely because of the complexity of management, weaknesses in implementation, and the lack of standards for a pervasive enforcement point - despite the efforts of Microsoft, Adobe and others. Rights management is more of a control to keep honest people honest and as an underlying control mechanism embedded in some types of document sharing applications. Some organizations get tremendous utility out of protecting certain classes of data using distributed rights enforcement (protecting the data itself rather than locking down its local container). Interestingly, one of the main problems I experienced with this was that it was often so effective it highlighted the contradiction between the policy people said they wanted vs. the reality of what they could tolerate. For example, I had one situation in a past life where we had to regularly send a particularly sensitive document to a financial regulator. We protected it with Adobe Rights Manager so that we could precisely control who was supposed to be able to read and print the document. The problem was that the particular regulator, despite the agreed policy, wanted to share the document unnecessarily widely within their organization. We were “asked” to totally turn off the data protection which obviously raised a few eyebrows. There were some additional consequences as a result of this lessened protection I won’t go into, but you can probably guess. 
+
+
+Data Zones. Another great control is to create zones where data can be kept and enforced to never leave except for well defined reasons in specifically controlled paths. Now, the obvious question is what’s the point of that. Well, it depends how well the zone is constructed. For example, there are plenty of situations in many organizations where sensitive data is extracted from core systems to get into a business analytics platform. This often works by extracting / downloading into some local file system and then uploading it into the analytics platform. This is obviously problematic across a range of risks, not just security. What a lot of organizations now do is establish secured and authorized pipes between their core systems and the analytic systems where the access control policies in the analytic environment are inherited from the label based control in the core system. Additionally, reporting / download controls in the analytic system are enforced with data labeled to enable other enforcement layers to trigger on that for boundary protection. In this way you can balance the need to provide access to a wider array of data for legitimate analytic purposes while still keeping the data inside a protected zone. 
+
+
+Computational Protection / Encryption. There are many new technologies appearing that permit radically different protection regimes in balance with appropriate data sharing. These include techniques like differential privacy, multi-party computation, confidential computing and homomorphic encryption. Some vendors are even combining a few of these into solution sets that solve information sharing and security problems. 
+
+
+Data Minimization: Time and Space. We can, of course, further reduce security risk by not collecting quantities of sensitive data. As well as minimizing collection we can reduce the time information is kept, ensuring information is deleted as quickly as possible when no longer needed, and constraining what is shared. Reducing the amount of data sharing across supply chains can take some work but with discipline can be highly effective. For example, I know a few organizations that took some dramatic steps to stop the flow of privacy critical information out to suppliers (like social security numbers or national identifiers) by removing or tokenizing data to avoid the need to share such data while still preserving the operation of core business processes.  
+
+Bottom line: as we will find as we explore all the forces, the difference between the handling of the symptoms and the more fundamental handling of the force can be subtle. It comes down to the level of abstraction, how closely tied the controls are to the data and the data flows themselves vs. the devices through which those flows occur. But, most importantly, the main difference is to govern data, its labeled descriptions and annotation. Then to assign mandatory rules as well as discretionary rules so that more of the heavy lifting of protection is intrinsic to the processing goals of the organization. 
+
+
+
+© 2020 Philip Venables. 

@@ -1,0 +1,111 @@
+How to Tell if You Really are an InfoSec Professional
+Updated: Nov 5, 2022
+
+Some of you in the US, and maybe others, might be familiar with the ongoing, somewhat self-deprecating, Jeff Foxworthy skit of “You might be a redneck”. If not, then watch a few minutes of this video with one liners like, “If you’ve been on TV more than 5 times describing what the tornado sounded like……….you might be a redneck”. 
+
+
+Recently, in a discussion with some friends I realized just how much I know about criminal activity without ever having done anything criminal. It got me thinking how much of the equivalent exists in the rest of our world of information security. All the things we do that perhaps are more strange to everyone else than we would really care to admit. 
+
+
+So here we go, broadened out for all of security since I know our brothers and sisters in arms in other disciplines are blessed and cursed the same: 
+
+
+If you believe the phrase “it’s not paranoia if they’re really out to get you” is a note of caution - you might be a security professional.
+
+
+If you sit in a room and instinctively look for cameras, alarms and escape routes - you might be a security professional.
+
+
+If you know some highly obscure pornography terms (from investigations) without otherwise being a consumer of such content - you might be a security professional. 
+
+
+If one of your Board members offers to connect you with their “special contact” in “Government” that they met at a conference once because it will transform your program - you might be a security professional.
+
+
+If you fail your own security awareness tests because the right answer is somewhere in between the multiple choices - you might be a security professional.
+
+
+If you manipulate every URL on every web site you use just to see what happens then - you might be a security professional.
+
+
+If you know various means of conducting crimes and evading detection - you might be a security professional.
+
+
+If you don’t follow many of your profession's pronouncements because in most situations they really are just too inconvenient then - you might be a security professional.
+
+
+If your Board says they have no risk appetite for security breaches but insists on using their personal AOL e-mail for sensitive Board materials - you might be a security professional.
+
+
+If you get pitched by recruiters for junior firewall admin roles in your own organization - you might be a security professional.
+
+
+If research organizations want to pay you a Starbucks voucher for 3 hours of your time to talk about the XDR market - you might be a security professional.
+
+
+If vendors try to sell you products your organization also sells - you might be a security professional.
+
+
+If venture capital firms want you on their advisory boards so you can act as a virtual sales person then - you might be a security professional.
+
+
+If, despite having been a software engineer, you know you’d have a tough time writing secure code these days - you might be a security professional.
+
+
+If you can spot the failure modes of everything and delight in pointing it out to the annoyance of family and friends - you might be a security professional.
+
+
+If family members describe you either as a “hacker” or a “security guard” and you don’t bother correcting them anymore - you might be a security professional.
+
+
+If people are shocked that you understand business (or don’t always wear a hoodie) - you might be a security professional.
+
+
+If you spend most of your time at conferences commiserating with others on the crazy stuff you have to deal with - you might be a security professional. 
+
+
+If certain business leaders you work with think the phrase “explain it to me like I’m a young child or a Golden Retriever” is a badge of honor - you might be a security professional.
+
+
+If you get Calvin Klein underwear sales people from China with “glamor” images as their profile picture try to connect with on LinkedIn regularly - you might be a security professional.
+
+
+If you are pitched on roles as “it pays top of market” to then discover that the market rate is equivalent to a Yak-herder in the Himalayan foothills - you might be a security professional. 
+
+
+If every hot start-up pitched to you by VCs has at least one former head of Unit 8200 on its leadership - you might be a security professional. 
+
+
+If you have to explain to your leadership why you’re not buying AI products marketed in The Economist or FT - you might be a security professional. 
+
+
+If you have more than 5 ways of communicating with industry colleagues over secure messaging apps but you still text each other - you might be a security professional. 
+
+
+If you are deluged with people on LinkedIn trying to help you get more certifications -  you might be a security professional. 
+
+
+If you’ve given up on even trying to read all the Slack channels you are a part of - you might be a security professional. 
+
+
+If you keep getting invited by marketing companies or vendors to attend events to network with your peers (many of whom you’ve known for longer than the existence of those companies) - you might be a security professional. 
+
+
+If you try and explain to Bank call center workers how to better tune their fraud detection algorithms and are surprised that they don’t appreciate you for that - you might be a security professional. 
+
+
+If you have no incidents for a year or more and you then get serious questions as to whether you are overspending on security - you might be a security professional. 
+
+
+If you have incidents as a result of budget cuts and you then get serious questions as to why you didn’t spend more to prevent those - you might be a security professional. 
+
+
+If an incident occurs in relation to a previously “risk accepted” risk and you are asked by the people who accepted the risk why you let them do that, then - you just might be a security professional. 
+
+
+If you still have to explain to people that Y2K wasn’t a false alarm and that it was a non-issue because a ton of people worked really hard to make that not be an issue - you might be a security professional. 
+
+
+If you hate everyone else’s security analogies but shamelessly use your own catalog of them - you might be a security professional. 
+
+© 2020 Philip Venables. 

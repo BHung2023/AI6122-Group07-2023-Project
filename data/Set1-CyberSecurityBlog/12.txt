@@ -1,0 +1,55 @@
+Return on Investment for Security
+The concept of return on investment (ROI) for security has bugged me for a long time. Not because it isn’t a laudable goal. Of course, any investment you make should deliver something in return. Rather, it has bugged me because of it being narrowly defined and often based on spurious numbers. 
+
+
+This narrow view has led to some bizarre situations. The worst variety from a few years ago was the plethora of authentication / SSSO vendors running ROI numbers that went something like: because users login with 10 different authenticators, 20 times a day and it takes them 5 seconds each time then that’s 1000 seconds a day, roughly 17 minutes of time wasted. If the cost of that person is, say, $200 per day then across a 10,000 person organization you can save $15M per year, so of course you should buy our $2M software because it has a 750% ROI. 
+
+
+You can all see the flaw. Whenever some ROI discussion like this is based on fractional time saving then it only becomes real money if you then actually reduce the size of the employee base by $15M to realize the actual financial benefit stemming from that efficiency. But with time slices like this you never can. Not to say you shouldn’t implement the SSSO solution, or other worthwhile controls, but not for this specific spurious ROI reason. 
+
+
+Similarly, back of the napkin potential loss calculations (even if you believed their accuracy, which you shouldn’t unless you’re using a solid methodology) as a means of showing ROI justified by using loss avoidance don’t matter either. They are usually invalid from an accounting practice unless you are actually reserving capital to cover those potential losses. In which case your ROI can be derived from reserving less loss absorbing capital which can then be deployed into real business revenue generation which results in actual income. Almost no one does this though. Again, not to say that potential loss avoidance shouldn’t be a prime motivator for many other reasons. 
+
+
+So, should we just give up and not bother with such analysis and just appeal to the better nature of organizations, the desire to do the right thing to protect customers, to assure continuity of operations and protect your brand / reputation. I would say, yes and no. 
+
+
+Yes, our primary goal should be to protect our customers and our organizations so as to sustain operational resilience under a range of scenarios. We should strive to make the risk mitigating steps we take to be cost effective and efficient and to raise the baseline by reducing the unit cost of control. 
+
+
+No, we actually shouldn’t give up on looking for pure ROI for security investments, we just need to shift our perspective to what is the return. We can look at return in the form of the adjacent benefits of security investments along with the operational efficiency of the controls we implement. Additionally, we can apply the same accounting rigor to calculating returns for controls as we would for business investment returns. Here’s a set of examples of security investments that can and often do show an actual real return on investment:
+
+
+Implementation of controls that enable an insurance premium to be reduced 
+
+
+Addition of security features to products, often specifically for regulated industries, that as a result unlock markets by making it possible for customers to now use those products 
+
+
+Implementation of controls that, with rigor, can show that any retained loss absorbing capital can be reduced and released to then generate business returns 
+
+
+Adjustment of fraud or other controls that impede business transactions to yield a reduced false positive rate (or better customer experience to adjust alerts) such that there is a reduced rate of broken transactions (lost revenue)
+
+
+Improvements in customer sign-up, identification, authentication and other checks to reduce onboarding failure rates, thereby increasing future revenue
+
+
+Increased efficiency of integrating product security features with a customer's own security apparatus (for example, federated authentication and authorization) that permits more seamless sign-up for new products or increased utilization of and charges against current products
+
+
+Addition of new security products that increase the efficiency and productivity of the security or related technology teams. As above, though, be careful on soft-dollar numbers. This ROI needs to be tied to rigorously defined actual cost-avoidance. For example, a series of new business initiatives means the security team must expand by 20 people. Those initiatives are going to happen and that funding is locked in, but with this particular security investment that growth can now be just 10 people and the budget for the other 10 is actually returned for other business purposes
+
+
+Addition of new security controls that enable pre-existing controls (ideally more than one) to be replaced. But, this has to be such that hardware, software, people support, other operational expenses are actually eliminated as a result to yield an actual reduction in budget (pro rata) and returned for other business purposes
+
+
+Measured improvements in efficiency that yield material savings for which budgets can be reduced, budgeted projected costs avoided, or meaningful extra revenue reliably projected. This could be everything from implementing new mobile working controls to permit sales and business development people to operate in new markets, developer tooling to improve product cycle times and bring new revenue generating features to market, through to reducing errors and other operating events that reduces downtime and actually reduces contractual penalties 
+
+
+There are likely many more examples. The key, though, for it to be considered actual ROI is that they result in actual savings or actual revenue growth that translates into real accounting entries - either budgeted items no longer needed and so real costs avoided or actual reduction in run rates. 
+
+
+Bottom line: if you want to drive ROI, which you should, then do it for real. Follow the money to actual accounting entries. But remember, even if you can’t generate ROI for some control improvements then it doesn’t mean those shouldn’t still be done. It might just simply be the right thing to do anyway.
+
+© 2020 Philip Venables. 

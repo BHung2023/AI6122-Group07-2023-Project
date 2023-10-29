@@ -1,0 +1,55 @@
+Cyber Deterrence : A Simple Perspective
+Cyber deterrence is a topic that comes in and out of vogue. It is widely studied but often misunderstood. It also suffers tremendously from an over use of analogies into other realms of even more studied aspects of deterrence, like nuclear deterrence. 
+
+
+There is a massive amount of research on this topic, a lot of which is good, but a lot of which falls into the category of interesting but not useful. As a result, cyber deterrence is not actively considered or discussed much in the main stream of security practitioners, at least outside of Government or military circles. 
+
+
+This short post is my take on cyber deterrence that I (and others) have found useful over the years. Experts, however that is defined in this field, might criticize this perhaps overly simplistic take as naive. But, I am not without some degree of knowledge on this subject having been an active participant in many studies, many actual deterrent activities and periods of significant involvement in some well regarded research such as this National Academies workshop. 
+
+
+First, what is deterrence. The dictionary definition is "the action of discouraging an action or event through instilling doubt or fear of the consequences." This is useful enough and unpacking this further I think there are 4 levels to cyber deterrence:
+
+Penalty
+
+Futility 
+
+Dependency 
+
+Counter-productivity
+
+Let’s look at each.
+
+
+1. Penalty 
+
+This is the classic deterrence approach. Establish capabilities to detect and respond to attacks, and in the process capture sufficient forensic quality (if possible) information to enable attribution and consequent law enforcement or other response. The goal is then to inflict harm on the attackers in some way either to degrade or eliminate their future capabilities. Thus, the higher likelihood such response would be successful creates a potential reluctance for the attackers to go after certain targets or classes of targets. Creating an environment overall (for your sector or nation) or creating the perception that your organization is a target that will generate a counter-response (from a lawful authority) could potentially dissuade attackers. Clearly, this is an area where we need to keep doing more despite some great and intense efforts from many agencies in several countries. 
+
+
+2. Futility 
+
+This is having sufficient defenses that an attacker is dissuaded from attacking because it would seem a waste of effort (attackers have bosses and budgets too) and are persuaded to go elsewhere. In the examination of futility there are multiple levels. Attackers seeking vulnerability at an industrial scale to then exploit those discovered vulnerabilities are likely to pass over organizations with a solid baseline of control that don’t show up on a discovered vulnerable target list . Attackers with a specific target in mind who will have the desire and resources to exclusively and exhaustively target an organization until they succumb are less likely to be deterred. That is unless that organization has sufficiently strong defenses to ward off even the most advanced attackers. Even then, there can be a ramp up depending on the degree of interest in the target and the range of capabilities of the attacker.  Nevertheless, the deterrent effect of a strong defense to create the perception that certain levels of effort would be required beyond the “budget” of the attacker may be an effective strategy -  perhaps more so than penalty alone.  This is where attack and defense becomes a game of economics. Reducing the unit cost of defense faster than attackers can reduce the unit cost of attack is the ultimate measure of success for us all. 
+
+
+3. Dependency 
+
+Here we get into more activity that is at the national strategic level, but not always. Finding yourself in a situation by coincidence or design that the attacker is dependent on you for some other aspect of their activities, or life in general, puts you in a position where at least they aren’t motivated to do significant harm lest your services be denied to them in some way. There is, sometimes clearly, moral hazard here. For example, a secure, private or otherwise ephemeral messaging service that is used by attackers is unlikely to be targeted by those same attackers in many cases. So that messaging service might have to (again, not entering a moral debate here) entertain the dependency calculus of whether to undertake activities to restrict the use of their services. 
+
+
+4. Counter-productivity
+
+The final level of deterrence is, again, more at the national strategic level, where the goals of the attackers become “own goals” for their strategic objectives. This could be domestic political blow back or impact between mutually connected criminal groups. Like dependency, counter-productivity is often a by product of other activities but can be constructed, again, at a geo-political level. 
+
+
+_____________________
+
+
+So, what does this mean for the average organization? I think not much in reality. That is, except what you need to be doing anyway to maximize the effect of Penalty and Futility by maintaining an ever stronger baseline of defense and by having an effective detection and response capability coupled with strong law enforcement partnership. 
+
+
+The reality is that cyber deterrence is a function of our wider eco-system made up of public/private partnerships, information sharing (from ISAOs to ISACs) and international agreements and law enforcement coordination to constantly degrade the effect of attacker capabilities. If we can constantly raise our baseline defenses by reducing the cost of control and in turn raise the costs to attackers we increase deterrence by making many types of attacks futile. 
+
+
+Bottom line: Deterrence is rarely what one organization can do alone. Rather it is something that can be a function of an eco-system courtesy of all its participants. So, what you can do is collaborate with others to create an environment of shared defense - and most importantly for most organizations to raise your baseline protection by reducing the cost of control to drain attacker resources. 
+
+© 2020 Philip Venables. 

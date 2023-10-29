@@ -1,0 +1,32 @@
+Security Program Tactics - Updated
+When starting or reinvigorating a security program, focus on a small number of meta-objectives that can have sustained outsize effects in addition to diving into the immediate and very specific things that need improving. 
+
+
+Here are 7 of those I’ve found useful or have seen applied in various companies (large and small) and various contexts (public and private). This is not an exhaustive list - nor is it the list of the specific priority controls to implement.
+
+
+Increase Risk Transparency & Accountability. Fundamental, but not easy, this is something that is a constant work in progress for all. It includes maintaining a catalog of risks, controls that mitigate those, and subjecting those to increasingly continuous automated verification. Establish a formal risk appetite protocol for determining who at what level of the organization can endorse a residual risk. Work to converge the management of different technology risks such as improvements in the software development lifecycle that have intrinsic benefits to security. Increase the velocity of the find risk to fix risk flow. Use inherent risk reduction as a tactic – in other words try risk avoidance in addition to applying controls, like not capturing or keeping sensitive data you don’t actually need. Reducing the inherent risk in business and IT processes often has adjacent commercial benefits and can increase overall efficiency and effectiveness by reducing the number of needed controls.  
+
+
+Raise the Baseline by Reducing the Cost of Controls. If controls can be widely embedded, easily deployed, autonomously managed, made cheaper over time, have reduced negative externalities and bring adjacent non-security benefits then you can apply them more at diminishing cost. The trope of don’t spend more on controls vs. the financial risk of a potential loss breaks down when deploying the controls is cheaper than doing the risk assessment to decide if you should deploy the controls.
+
+
+Create More Defensible and Resilient Architectures. Obvious, right? But easier said than done. Minimize attack surfaces, architect for lower blast radius, implement zero trust across not just user access but production applications as well. Replace explicit-deny with explicit-permit across software execution, data flow and connectivity – and remember that the graph you end up building to encode these relationships/flows is perhaps your biggest asset (it’s graphs all the way down these ways). Distill out best security patterns and encode them into opinionated platforms the use of which creates well-lit paths for security: make the secure way the easier way (and look for "desire lines”). Remember, also, to architect defensible business processes as well as technology. Your business process controls can provide major lines of defense. This is another reason security teams should intimately know your business processes (upstream to customers and downstream to the supply chain). For example, solid separation of duties and reconciliation across inventory and accounting processes can provide defense in depth again break-downs in underlying technology controls. 
+
+
+Operational Resilience. Take the first steps to move your disaster recovery or business continuity programs to adopt operational resilience principles. In other words, focus on end to end business services as well as IT components, consider plausible but severe scenarios and plan not just for perfect recovery but also include the notion of operating in degraded states, swapping in substitutable services. Understand your most crucial 3rd and 4th party dependencies using services like this.  [Full disclosure:  I'm on their Board]. 
+
+
+Process Embedding. Examine business and technology process and decide how to embed risk and security steps into those, for example: consider how you plan for not just your own team's budgets but also what funding you expect other teams to allocate to risk reduction and preventative maintenance. Increasingly formalize your relationships to other teams and their processes using tools like an alignment matrix.
+
+
+Increase Risk Workforce Productivity. For every unit spent on trying to hire and train more security professionals invest multiples more to 10X increase the productivity of the people you already have. It will also help retain them as they’ll be doing higher quality jobs with less toil. Apply this to all that interact with security, make the secure path the easiest path, apply UX/usability improvements in systems, especially customer facing environments, as a nudge to influence secure behaviors. Remember, automation/skills density across the enterprise is more important than numbers of people.
+
+
+Operate Threat Intelligence & Large Scale Hunting. Constantly scale up and speed up the intelligence, hunt and defense OODA loop. Disturb the economics of attackers, study their evolving TTPs not just specific indicators of compromise and aim to neutralize whole classes of attacks. The ultimate goal is for your OODA loop to be faster than the adversaries OODA loop.  
+
+ 
+
+Bottom line: focus on tactical goals (get stuff done!) not solely on grand strategy but devote time to some meta-objectives that directs how these tactics build more lasting effects. It is especially vital to commoditize controls so you can put them in more places at less cost and to build systems/processes that ensure the risk and security processes are increasingly self-sustaining.
+
+© 2020 Philip Venables. 

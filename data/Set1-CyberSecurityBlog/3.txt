@@ -1,0 +1,43 @@
+The 6 Fundamental Forces of Information Security Risk
+I first posted this as a Twitter thread in 2019. These forces still seem very much current - perhaps even more so. It is interesting to think that most of the issues and risks we face arise from a small number of these fundamental forces. 
+
+
+These manifest in different ways in different contexts but when you strip away the detail from most issues you can usually see one or more of them. Thinking about this can be a bit academic, however, so I find it instructive to look at these and assess your maturity in dealing with each particular force. Immaturity in dealing with any one of them will manifest as a range of symptoms. Focusing broadly on the particular strategy for the force you’re dealing with can be more effective than just tackling the symptoms. Of course, the next question you may have is what does that strategy look like. In the coming months I will post some thoughts on each. 
+
+
+I don’t claim originality here - some of these have been postulated and used by others before me. 
+
+
+1. Information wants to be Free
+
+Data leaks unless managed, access degrades without rules, and information is ethereal. You can think of this force in both senses of the word free, that is it innately wants to escape its boundaries as well as in the original context of the term, from Stewart Brand: “Information wants to be free. Information wants to be expensive....that tension will not go away”. 
+
+
+2. Code wants to be Wrong
+
+Bugs are inevitable, in all their forms, across the spectrum of requirements, design, and implementation. Some bugs are security vulnerabilities and exploitable bugs can become a realized risk. I first heard this from Bob Blakley many years ago. 
+
+
+3. Services want to be On
+
+Unless positively constrained, attack surfaces grow. Risk is proportional to attack surface. Unknown services are never checked. There is a Murphy’s Law corollary of this which could be stated as: services want to be on, unless you really want them to be on and then they often fail.
+
+
+4. Entropy is King 
+
+Unchecked controls fail over time, untested resilience fades gradually and then suddenly. Constant counterbalance is needed. Everything degrades unless countered with a force to keep it in place. This is why continuous control monitoring and, in effect, “control reliability engineering” is so essential. 
+
+
+5. Complex Systems break in Unpredictable Ways
+
+Simple systems that work may still collectively fail when composed together - and will often do so in unpredictable and volatile ways.
+
+
+6. People, Organizations and AI Respond to Incentives (and inherent biases but not always the ones we think are rational)
+
+The macro/micro economics of information security are important to align incentives. This can help to ensure we reduce the right risks in prioritized order factoring in opportunity and productivity cost.
+
+
+Bottom line: new issues and risks surface all the time. The more we can resolve those to some basic forces, and counter (or use) those forces - the less likely we will be surprised by those new issues.
+
+© 2020 Philip Venables. 

@@ -1,0 +1,43 @@
+Risk Management is not only about Reducing Risk - Updated
+This is an update from a post of a couple of years ago prompted by some recent observations from a few different organizations. It seems there are still a large number of risk and security programs whose genesis is so control oriented that they have "hard-coded" in their only approach to risk management as constantly performing risk assessments to find new things to mitigate to keep relentlessly reducing risk. 
+
+
+Now, at the beginning of any effort this is great as there are always many valid things to do. However, eventually this can become counterproductive - in the sense that those further activities reduce risk in less meaningful ways while incurring disproportionally high costs, negative side-effects, in particular opportunity costs of where that investment could have been applied elsewhere for significant benefit. 
+
+
+Some of the most pernicious side effects of perpetual risk minimization are those that impact the core mission of the organization. Every mission is about taking some amount of risk to achieve an objective. It is particularly dangerous to focus on exhaustively minimizing some risks while creating the risk of standing still and doing nothing so an organization’s agility or growth stagnates. 
+
+
+Now, this is where risk teams have to educate management and Boards on the concept of Risk = Hazard + Outrage to avoid being disproportionately driven by the outrage response of even minor potential risk events. This is important to avoid spending excessive time and effort to minimize their likelihood at considerable expense. A portfolio risk management approach is needed that isn’t just focused on operational risk (of which security risk is a subset) but also includes strategic and other business risks. In a portfolio approach the overall cost of a risk mitigation might not be the cost of the control alone but could well be missed opportunities, time to market, or customer experience. 
+
+
+The best way to start with this approach is to formally include in your risk assessment process a series of questions that seek to understand whether the current risks are at an acceptable level based on some perspective of loss history, projected threats and other factors. Then, once the risk is at an acceptable level the focus is to keep it like that - but essentially do no more mitigation work - except for a periodic or trigger based revisiting of the assessment. It is fine for a risk assessment (or even an audit) to conclude that while there could be more controls to apply that they might not in fact be worth it, especially so investments can instead be made in other areas that might truly need more work. 
+
+
+However, a big part of the approach of the most successful risk and security programs is, in fact, to never stop there - but instead go in a different direction entirely. In fact, achieving the right risk level is merely the very beginning of a more worthwhile journey that improves the way that risks are mitigated. In other words, keep risk flat but improve the efficiency and capability of the controls that mitigate the risk - across multiple dimensions:
+
+
+Improve customer experience. Deliver the same risk level but improve the usability of controls - including reducing friction for the customer to sign-up for services or new features. This typically applies in relation to authentication, authorization and fraud prevention.
+
+
+Reduce cost. Reduce the cost to sustain or upgrade controls and then direct those savings to other improvements - or to other risks where there is still a need to more actively implement new controls to reduce risk.
+
+
+Increase efficiency. Optimize the arrangement of controls, or indeed reduce the number of controls implemented for each specific risk, being careful not to impact defense in depth.
+
+
+Raise the level of continuous controls monitoring. Replace controls that are not amenable to continuous performance monitoring, or that don’t emit the right metrics, with ones that do.
+
+
+Automate more. Replace any manual activities progressively with automation to reduce the administrative toil or other maintenance load.
+
+
+Create adjacent benefits. Develop adjacent benefits for existing controls such as having security logging capture and synthesize more data to assist with performance monitoring, or enhance distributed recovery to not only improve resilience but to increase change frequency.
+
+
+Reduce negative externalities. Enhance controls to reduce impact on other risks, such as improving any trade-offs made between security, resilience and/or performance.
+
+
+Bottom line: The true mark of a commercially-oriented security program is to be perpetually optimizing control performance even after risks have been reduced to acceptable levels.
+
+© 2020 Philip Venables. 

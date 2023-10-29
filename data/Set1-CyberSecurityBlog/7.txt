@@ -1,0 +1,129 @@
+Secrets of Successful Security Programs - Part 1
+A successful security program (although I imagine this advice could apply to any discipline) is made up of two distinct elements:
+
+
+A series of episodic big bets that yield transformational improvements. 
+
+
+A set of management practices and approaches applied relentlessly, iteratively and subject to constant incremental improvement. 
+
+
+If you just do the first then the success that those improvements bring taper off or are a just a patch-work of bright spots amid a back drop of issues and instability. If you just do the second then you are condemned to operate in reactive catch-up mode in the face of events. 
+
+
+So, you need to do both and you have to do them in balance. Interestingly, you also need different types of people and different budgets for each: one-off big bets funded in special ways vs. annual operational budgets with perpetual funding lines. 
+
+
+In the first of this two-part post let’s look at how to go about defining and driving those episodic transformational improvements. Your objectives in driving a transformational improvement have to be, by definition, dramatic given the effort and organizational commitment needed to pull off that change. Many of your objectives will be self-evident when you decide to give yourself permission to plan for a grander scale of change and will often fall into these categories:
+
+
+Mitigates whole classes of attacks. Not just picking off new tactics but dealing with whole sets of attack techniques. For example, implementing a well-considered software allow-listing control framework for end points and production systems meaningfully transforms the risk profile for malware and attacker lateral movement. 
+
+
+Eliminates sets of pain. Look for significant areas of pervasive toil for customers, end users or developers/engineers. 
+
+
+Alleviates pressure on existing controls. Look for where defense in depth from attack is coming under pressure. Think of this like a control pressure index, where there’s a stack of controls acting to implement defense in depth, then ask what percentage of attacks make it through each layer of defense. When the inner layers of control are bearing a higher percentage of the pressure then it’s time to replace the outer layers or add new inner layers to keep the layering intact. 
+
+
+Reduces risk from configuration errors. Look for opportunities to add defense in depth from configuration errors. Seek out places where single configuration errors, or multiple errors under potential single-control could yield catastrophic outcomes.
+
+
+Lessens risk incompatibility. Look for tension points between risks e.g. resilience vs. security. I’ve seen plenty of situations where reduction of privilege because of insider risk mitigation has gone too far and in moments of disaster recovery there are insufficient numbers of people with the right access to perform critical work. Similarly, look for single points of control failure such as if an outage of a control plane prevents the required access to fix that same issue. 
+
+
+Assures rigorous adherence to principles. Seek invariants and check their validity, e.g. what has to remain true for success, what has to remain true to avoid failure and then put in place activities to more consistently establish and sustain those invariants. 
+
+
+Deals with structures that buck relevant mega trends. Look for the mega trends and question if anything in your strategy depends on these not being true or cannot handle their consequences.
+
+
+Gets ahead of impending technology transformations. Look at emerging technology transformations e.g. cloud, quantum and see what you need to prepare for or what opportunities might come with it. It is also vital to look at what are the upcoming episodic bets that other disciplines are making and see if this causes you to conclude you are missing something or are in conflict with their direction. For example, if your business has a big bet on cloud and you’re not invested in an effective cloud security management framework then you’re clearly going to be out of phase.
+
+
+From these categories can come a series of ideas for whole leaps forward either in terms of technology architecture, process overhauls (business and technology) or organization and management technique changes in and around the risk and security programs.  Here are some of my favorite examples that I’ve driven or helped drive over the years. As ever, I’m cautious in taking too much credit here, many ideas were team efforts not just in the execution (of course) but in the ideation as well, and many were driven by technology colleagues in response to problem framing by the security team. 
+
+
+Security is an Endless Program not a Project
+
+This is obvious now. But back in the 1990’s and early 2000’s a lot of the first organizations to invest big in security did so as a one-off, albeit multi-year, project to uplift controls and prepare for the future. Many leadership teams (business and IT) viewed this as invest $X in security and then we’ll be done. It took a concerted effort, in fact a campaign, to have Boards and executive leadership realize that while there will be necessary bursts of investment to fund material improvements there is an ever growing need for a base level of funding for the steady-state security program. I remember distinctly around 2001 - 2003 going through that transformation and how meteoric it felt to have the CEO, CFO, CIO and others really internalize the program vs. project aspect of security and to put the work on a solid funding path for the future. Without this basis there wouldn't have been the foundation for the big bets. 
+
+
+Secure Products not [just] Security Products
+
+This is another one that is mostly taken for granted now - thankfully. But, again, in the early 2000’s it was usual for security to be added in as a layer at the end of product engineering cycles. In fact, I knew a couple of organizations that explicitly designed their engineering processes such that security was added “late” deliberately for separation of duties reasons. This was often disastrous in the long-run. Early adopters of driving IT and product teams to create secure products by design, not adding security after the fact, soon saw dramatic improvements and, more importantly, significant cultural shifts in the prioritization of appropriate risk management. We've come a long way and there is now wide acceptance of the importance of building in security, not bolting it on. The epitome of this is cloud. 
+
+
+Strong Two Factor Authentication
+
+Removing passwords as much as possible and replacing or augmenting them with strong two factor authentication, ideally cryptographic tokens with good phishing resistance properties like U2F tokens. Even if you can’t do this pervasively for all access then do it for all remote access/connectivity, for high risk/privileged access use and for high risk transaction based step-up authentication. Thankfully, there are now many options and the balance of cost, usability and deployment flexibility is significantly better. There really isn't any excuse any more to not have this key control. The organizations that had this early have saved themselves immense pain. 
+
+
+Multi-Tier DMZs
+
+This architectural approach has been vital for many organizations, although the patterns for achieving these goals are changing with cloud based deployments that offer even better separation of concerns and defense in depth. Essentially, the principle is to have an exterior web tier, a layer of segmentation controls (e.g. firewalls) followed by an application tier, more segmentation and then another tier for the data. Even better is to micro-segment this "east-west" as well as "north-south" to run everything only as positively allow-listed flows. There should also be sufficient complementarity between controls in each layer so the defense in depth is really additive. I’ve been amazed at many well publicized breaches in which the root cause discussion focuses on, for example, the single unpatched vulnerability that led to a web application exploit which in turn exposed vast quantities of data. This, as opposed to the real question which should have been what architectural weaknesses and lack of segmentation led to one exposed vulnerability having such a blast radius. 
+
+
+Application Security Frameworks and Tools
+
+Another great early big bet for many organizations was to invest in standard tooling for developers to use to implement common security controls. This includes authentication, authorization, logging, encryption, and various web security control patterns to mitigate many of the common application vulnerability types. While developer education on security is important, even more important is reducing the extent of knowledge required by encapsulating security capabilities in highly assured tooling that all can use. This is an ongoing investment, not just in the tool variety, capability and assurance level but also in continued integration with other frameworks so that the secure path is always the easiest path. Every time application security or other teams find a vulnerability then, think, what can we do to reduce the potential for further instances of the vulnerability through the provision of good tooling. 
+
+
+Web Proxy Default Deny
+
+This might not be a control suitable for all organizations but for many it has proven a regular solid last line of defense to mitigate malware events and other attacks.  This control utilizes a concentrated point to mediate user or application outbound web access such that the only sites available are specifically approved within explicitly defined categories. Anything uncategorized, or recently freshly categorized is blocked pending access approval. This can be an onerous control if there isn’t a slick approval process to remove incorrect blocks, and it’s also not immune to bypass, but for many organizations it proves a useful line of defense. Some organizations rather than do an outright block introduced a “speed bump” where end users can get to click through a warning and in most cases, if implemented correctly, automated attacks or malware are insufficiently aware to be able to do this systematically. 
+
+
+No Privilege without Identity
+
+This should be a foundational control for all organizations, but I’m still surprised how often it isn’t. Essentially, this approach requires that all resource access be based on one common authenticated identity, and that identity be tightly coupled with a single reliable inventory/record of employees, contractors and customers (for external accesses). Then this is used as the means of driving out any privilege that is not linked to that singular established source of identity. This can be challenging at first. I’ve worked in organizations where this took several years and involved not just consolidating identity stores and authentication systems but in some cases also needed to drive the consolidation of Human Resources systems to get to a single common repository of who the actual employees are. In fact one of my favorite Executive Committee moments many organizations ago when driving this type of initiative was to have the Head of HR at the time actually assert it wasn’t their job to drive to a single source of truth of employee data, they viewed their role as more “strategic”. Thankfully in the meeting when this was discussed the CEO and COO took a rather different view and then a short time later we had some pretty aggressive HR system consolidation going on. 
+
+
+Access Monitoring and Toxic Combination Control
+
+All organizations, large and small, have ongoing challenges to understand what privileges people have vs. what they should have. It’s a massive ongoing effort for all organizations to implement sound access management programs, introduce well formed roles and to drive more complex access management decisions (attribute as well as role based access control -  ABAC and RBAC). However, a great intermediate step that not only helps reduce risk tactically but also prepares the ground for the more strategic ABAC and RBAC work is to regularly pull copies of access configuration data out of target systems and access management tooling. Having a central data warehouse of who has access to what permits a range of useful risk monitoring approaches not least looking for so called “toxic combinations”. This is where some people or teams might have combinations of privilege that together break a separation of duties requirement or otherwise conspire to breach an information barrier. Having an operational process (analogous to a Security Operations Center) that handles and drives a workflow to deal with these toxic combinations is necessary. Finally, don’t be fearful that this will create a lot of noise or issues to deal with - it absolutely will - but that can then be used as a good illustration for investing in the more strategic work to reduce the creation of those toxic combinations in the first place - by improving the structuring of roles and establishing the right rules in the privilege provisioning systems. But, watch out for the uncanny valley. 
+
+
+Threat Management Centers
+
+Creating a 24x7 Security Operations Center (SOC), or outsourcing that capability is a necessity for most medium to large organizations. Often, though, these SOCs can tend to be solely reactive, almost by definition. Many SOCs try to move up the stack to incorporate better threat informed monitoring and hunting, and to drive improvements in automation, tooling and analytics that are tuned more precisely to the organization’s mission. In many cases, that I’ve seen in various sizes of organization, this tends to fail due to the immense tactical operational needs crowding out the work needed for those more strategic activities. This is where the creation of a parallel but linked Threat Management Center to focus on the hunt mission and the continued optimization of the internal or outsourced SOC is useful. Organizations that have done this usually end moving quicker to automate the basic SOC activities so that the threat management center becomes the new SOC. There are plenty of other big bets organizations can make to 10X the SOC using more autonomic approaches.
+
+
+
+VDI / Thin Client / Thin Building
+
+The pervasive deployment of virtualized desktops, running in data centers, accessed by thin-clients (Citrix or otherwise) was over the past 15 years one of the more transformational defensive approaches I’d witnessed in one of my prior organizations. The combination of least privilege, portable media restrictions, constant patching / upgrading, hot swapping of desktops to reduce down time from periodic rebuilds was a massive risk reduction. Additionally, the resilience and remote working capability and ability to keep data in the clean room environment of a data center rather than on thick-client desktops or laptops yielded a balance of security, resilience, performance and usability that was immense. This environment, coupled with various other layers of control, essentially eliminated malware risk for well over a decade. Now, arguably, this type of environment is past its time and is rightly being replaced by more zero trust based approaches that have an even better balance of control, resilience and flexibility. 
+
+
+Aggressive End Point Patching and Software Allow Listing
+
+I know there are many issues with an aggressive, almost fire and forget, approach to patching all vulnerabilities. This is especially so in production/application environments where much work is needed to deal with potential breakages and incompatibilities caused by patching. But in an end point environment, especially Microsoft Windows that has myriad of regular vulnerabilities and is constantly targeted by various types of malware and other exploits, there is really no excuse but to patch everything all the time as fast as possible. This is not just for Microsoft components but everything else as well from PDF readers to browsers and anything that can be reached or used to access untrusted content. This degree of control rigor coupled with least privilege (taking away local admin) and a solid software allow-listing program is now a necessary baseline for most organizations - but it is a steep investment initially - a classic big bet. 
+
+
+_______________
+
+
+There are plenty of other examples I could list and I’m sure you all have your own examples. A lot of organizations are still working through these big bets and many are working on the latest big bets, including:
+
+
+Rearchitecting the software pipeline to CI/CD principles with security embedded, and ensuring run times only execute known good output from that process.
+
+
+Implementing zero trust: both for end user access as well as segmented and least privilege production (such as BeyondCorp and BeyondProd).
+
+
+Driving the adoption of an immutable infrastructure pattern where production is never reconfigured in-situ but instead changes are pushed as new deployments.
+
+
+Further upgrading password-less or strong authentication to phishing resistant strong authentication.
+
+
+Rearchitecting and centralizing cryptographic toolkits to conform to crypto-agility principles to get ahead of the coming wave of changes to adopt post-quantum cryptography.
+
+
+Implementing significantly more rigorous insider risk blast radius reduction to take into account the inevitability of coercion of otherwise trusted insiders.
+
+
+Bottom line: establish and focus on the implementation of a sequence of big bets to materially reduce your risk. Do this in parallel with your ongoing security risk management program that is more incremental and iterative. 
+
+© 2020 Philip Venables. 

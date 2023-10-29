@@ -1,0 +1,106 @@
+The Actual Cybersecurity Workforce Challenge
+We continuously hear about the millions of unfilled cybersecurity roles, although I’ve yet to see a study that actually supports that near-constant claim. From this we are driven to believe the only answer to this problem is to create millions more cybersecurity professionals through a constant grind of training and skills development. We’ve been hearing this for years and despite some terrific work all round we don’t appear to have made more than a dent in the problem. I do, of course, agree we need more trained cybersecurity professionals, but this singular focus on this aspect neglects the range of problems which become clearer when you look at this as a supply and demand problem. 
+
+
+Fundamentally we need to do two things. First, we need to radically increase the productivity and effectiveness of the cybersecurity workforce we already have. Second, we need to reduce the demand on that workforce by distributing or eliminating existing activities. Our goal has to be to balance this by working both the supply side and the demand side at the same time. 
+
+
+Scaling Up - Increase Leverage 
+
+1. 10X Productivity
+
+Increase the productivity of the people we have across the full stack of tools and processes. For example:
+
+Improve interoperability between security tools to permit workflow integration (stopping the cut / paste drain between tools)
+
+Integrate with enterprise-wide ticketing and workflow systems
+
+Integrate into SDLC workflows
+
+Adopt a declarative style of systems configuration and with that treat controls as code and continuously monitor conformance 
+
+Converge as many disparate risk assessment processes as possible - measure once, certify many so as not to repeat work in compliance and other certifications
+
+Integrate security close-call and incident analysis with other incident review processes to save cross referrals
+
+Look at deep root cause of issues and seek sponsorship to implement new controls to neutralize whole classes of attacks
+
+Engineer the environment to reduce false positives. Remember, you can control configurations to optimize the placement of sensors or acquisition of sensory information that maximize their fidelity and increase likelihood of attacker detection. Remember, one of the best outcomes of segmentation is not just to reduce scope for lateral movement but also to channel attackers to places where you can optimize sensor coverage and increase the probability an attacker will bang into some detection
+
+Periodically rank the tools teams use according to performance and efficiency (not just effectiveness) and replace performance draining tools
+
+
+2. Toil Elimination
+
+Increase training of security teams in systems development, or even just basic scripting, and add SRE skills to drive constant automation of manual activities. Add engineers to the SOC, not just more hunters and threat analysts. Do this for other teams as well to be constantly looking for ways to eliminate or automate effort. While there is a lot of focus on machine learning and other AI techniques for hunting and anomaly detection, some of the best opportunities are for toil reduction, for example:
+
+Automated text analysis for categorization of issues 
+
+Data mining of historical data sets
+
+Automated validation of detection systems output to identify false positives and false negatives
+
+Analysis of misaligned privileges in IAM systems (good example here)
+
+There are some great resources here, especially the wonderful Secure and Reliable Systems book. 
+
+
+3. Work Process Design
+
+Relentlessly apply the theory of constraints to the work of the security team.  We have to break apart how we define cybersecurity professionals into different specific roles, skill sets and levels of experience and seniority. For example, consider the medical profession, we don’t in aggregate talk about healthcare issues purely in the terms of lack of doctors. When you visit a doctors officer, you see a receptionist to check-in and update your records, you then see a nurse practitioner who may take your vitals, then perhaps a phlebotomist to do your blood work, and so on until finally you see the scarcest resource, the doctor who is using their time efficiently because of the range of other vital roles in support of them. Even, more broadly you have research scientists, pathologists and other specialists, pharmacologists and a whole ecosystem designed to deliver better and better health outcomes. I’m not saying that healthcare is perfect, but when you look at the ongoing success and response to challenges it’s hard to deny massive progress has been made. 
+
+
+Fernando Montenegro has another great analogy for finance that takes this one step further in terms of not just process / work design but also touches on toil elimination through process and tooling solutions.
+
+
+I’ve seen a lot of enterprise cybersecurity teams adopt these principles, for example in many application security teams there are an array of roles where the less experienced team members get applications ready for testing, run the commodity tools and triage easier to resolve issues. The more experienced members of the team have their time optimized around dealing with difficult issues or are focused on using their expertise to conduct deeper design reviews and drive further automation or tools development. 
+
+
+The great thing about this approach of organization design is you can also explicitly solve for the challenge of people development by making sure you put in place layers of entry-level positions. The entry-level positions help you expand your team, provide leadership and managerial development opportunities for more senior staff and keep the very senior / experienced personnel focused on the most complex and demanding of activities. 
+
+
+The best metric to measure workloads is not just a percentage of utilization vs. number of people but the percentage of utilization of people’s time with the activities that match their skills and experience level. Experienced people having to do entry-level work is at the root of many of our resource challenges. 
+
+
+4. Discover Latent Talent
+
+Many organizations have some of their best security talent not in the security team, nor even in security roles distributed in the organization, but people who are doing other jobs from infrastructure to development who have latent talent and interest in security. This can be discovered by internal hackathons, open / gamified training environments, or simply keeping an eye out for the highly engaged people across the organization. 
+
+
+Distribution - Reduce Demand
+
+1. Secure Products not Security Products
+
+The more security can be designed into products as early as possible in the design lifecycle the less effort is needed on jamming in security as an afterthought in the form of layered security products or awkward compensating controls. But we all know this, so the question is how. This can be everything from design process embedding at various process gates to the judicious selection and application of secure defaults. It is also critical to seek and get leverage from other control, quality and reliability processes so it's not just the security team seeking to embed control in the design lifecycle. For example, many other teams want a tightly access controlled production environment so that change is well managed and tied to a reliable software delivery process. Partner with them. 
+
+
+But the real deal is to raise the baseline by reducing the unit cost of control. There's a whole post on that here.  In essence, paradoxically, it means discarding the notion that we carefully select controls to apply only where they are needed. This is important because the more you have to constantly decide at a micro level where to apply specific combinations of control the more you overload management decision processes. It also increases engineering implementation time, complexity in the environment which drives up workload and decreases reliability. Rather, figure out ways to universally apply a progressively increasing baseline of controls by making those controls cheaper, easier to deploy and manage and mitigate multiple risks at once. For example, implement encryption everywhere at rest and in transit. Over time that is cheaper than just figuring out where to put it and check that it's working precisely as intended. Another example centers on the right controls on production access control and controls over continuous integration and delivery pipelines for safely putting software in production. You get to a point where if you're only doing this for your critical systems you are losing the opportunity to drive improvements that come from economies of scale and the benefits of having one standard process.
+
+
+Finally, remember the real opportunity of cloud migrations and the sustained use of cloud services is that they drive this rising baseline and commoditization of controls to higher levels of efficiency and effectiveness for you. Just sit back and take all the updates you can get and adjust your application and infrastructure stacks to operate in cloud compatible ways. 
+
+
+Scale is the most underutilized technique in security for economy, network effects and resilience.  
+
+
+2. Developer Tooling, Toolkits and APIs
+
+Constantly look for repeated vulnerabilities, errors, process breaks and other triggers of work. Take these and remove them at the source with toolkits, services accessible through well defined APIs and other tooling. Relentlessly look at the root cause of not just security or control incidents but any work that drives uncertainty. 
+
+
+3.Embedded Responsibility
+
+Designate specific roles in teams to focus on and champion security and other risk themes. These roles don't have to be deep security experts but they should, of course, have a broad understanding of security to be able to look for tooling, product and other potential improvements. The key skill they need is knowledge of their specific area and a sense of how to partner with the central security teams. The driver here is, again, leverage. Specifically, can a designated role optimize communication flows and stimulate partnership by being a translator of goals between teams. 
+
+
+4. UX / Design Improvements
+
+The user interface and overall design of many security tools is lamentable. Poor tool design is a part of driving up a cybersecurity teams' workload. UX / design is not about the constant prettying-up of interfaces that happen to be in vogue at any one time, rather, it is fundamentally looking at the task and how it should be best performed. In many cases the best role of a designer is to subtract work to improve overall design. While some security professionals have an aptitude for this, you should get professional help and hire a few design experts to your team and give them a broad remit and ability to challenge entrenched views of "how it has always been done". 
+
+
+Reserve some development/engineering budget, say 10%, to only apply on small improvements in process, usability and other system deficiencies. Often these are assigned a lower priority than big strategic changes in your systems and so get stuck behind those. These improvements often have outsize effects on team productivity and morale. 
+
+
+Bottom Line: there is a cybersecurity skills crisis, but the answer is not to simply focus on creating more trained cybersecurity professionals. This is not only unachievable in the long run, but worse it fails to address the real challenges of cyber workforce productivity,   distribution of responsibility, toil reduction in cyber roles, the construction of entry-level roles, and the need for pervasive automation. Viewing this as a supply and demand problem focuses the minds on the right solutions. 
+
+© 2020 Philip Venables. 

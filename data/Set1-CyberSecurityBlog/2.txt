@@ -1,0 +1,98 @@
+Software Security is More than Vulnerabilities
+Updated: Mar 7
+
+Force 2 : Code wants to be wrong
+// 
+Central Idea: 
+
+Shift from a pure focus on only reducing security vulnerabilities towards increasing systems reliability - which should include control validation as well as security assurance / vulnerability reduction. 
+
+Continuing our theme of exploring the 6 fundamental forces that shape information security risk let’s now look at Force 2: Code wants to be wrong. As we did in the last post we can move from treating the symptoms to getting to grips with the underlying force itself. 
+
+
+The fundamental nature of this force stems from the inherent difficulty of developing software. All software has errors. These errors range from requirements conception and design through to implementation and subsequent maintenance. The types of errors induced in each stage can give rise to many different types of issues. In each case these errors can create various types of security vulnerability or control weakness. 
+
+
+The major distinction when looking at this force is to focus on reliability as a core goal and consider security as one of the resulting major benefits of that. This is especially important in our increasingly digitized world when the majority of our software risks (including AI and modeled systems) are reliability oriented of which security is a major subset.
+
+
+This post is not intended to be a complete analysis of a vast topic. Even each point will just skim the surface and some topics, such as formal specification and validation, I have omitted entirely. Rather, the goal is to give some examples to reinforce the point that we need to focus on reliability as a means of achieving security - not the other way around. 
+
+
+Treating Symptoms - dealing with what the force does
+Code Analysis. Analyzing source, object, interpretable or executable code for vulnerabilities or other types of error. This includes static, dynamic and other forms of run time analysis. These techniques have been around a long time and have delivered important progress in reducing software security vulnerabilities. However, despite much improvement in recent years, there are still significant challenges with accuracy (false positives and false negatives) and difficulties with effective and seamless integration into developer workflows. 
+
+
+Fuzzing. High volume injection of wide ranges of input into software interfaces (input channels, user interface, APIs, etc.) to watch for failure modes which can then be analyzed to determine exploitability - over a variety of risk types. 
+
+
+Exploit Development. Many and varied techniques to identify other forms of software vulnerability, often context specific to the particular run time environment or surrounding application framework. 
+
+
+Vulnerability Scanning. Systematic probing of run time environments (or specifically situated run times for the purpose of scanning) to look for indicators of a vulnerability either directly discovered or inferred by matching a “signature” of the type of software probed vs. known issues referenced in a repository of vulnerabilities. 
+
+
+SBOM Analysis. An emerging technique, rising in effectiveness proportional to the prevalence and accuracy of those Software Bills of Materials (SBOMs), to infer vulnerabilities of known software elements referenced in the SBOMs. 
+
+
+Penetration Testing and Red Team Exercises. A collection of activities, from artisanal to industrial, to use many of the techniques listed here to probe for software or configuration issues that are or give rise to security vulnerabilities. This is a wide spectrum of activities and there is no taxonomical consistency in what people claim what a type of activity is. For example, some organizations disingenuously describe a routine automated vulnerability scan as a penetration test. I’ve seen some organizations even describe this as a Red Team exercise.  
+
+
+Application Firewalls. In-line hardware or software “devices” to dynamically prevent exploits reaching actual or potentially vulnerable systems. Such firewalls can work against very specific attacks, generic attack patterns or enforce other specific rule sets according to other flow logic. Application firewalls attract mixed views, I can see and support the arguments against. Indeed, I’m intrinsically opposed to controls being enforced at one layer in a protocol stack for which enforcement (blocking traffic) would look like a generic failure at a higher level in the stack. Additionally, the use of application firewalls as a primary control as opposed to actually resolving vulnerabilities should be rightly frowned upon especially as such firewall rules can almost never be a complete mitigant. But, nuance is required, and application firewalls are a useful defense in depth approach for emergency situations where the resolution of a vulnerability may necessarily take more time than you have before you face attacks. 
+
+
+Treating Causes - dealing with the force itself
+Controls, Controls-as-Code, and Security. One pattern of thinking about reliability as the correct superset of security is to consider the full spectrum of controls that need to be present in software and the systems built from that. This includes:
+
+
+The logic that implements business controls. For example, in a financial ledger application this could be ensuring the correctness of the transactional properties of posting journal entries.
+
+
+The logic needed to implement application layer security controls. For example, the correct calling of authentication / authorization checks, transaction signing and verification, service mesh interaction, and the correct alignment with surrounding system or container runtime security - including production access controls and supporting immutable infrastructure deployment patterns. 
+
+
+The security logic for ensuring the application is shielded from common vulnerability patterns. For example, correctly parsing input through calls, APIs, frameworks and other channels.
+
+
+The overall security properties of the code. This is ideally achieved or improved upon through programming language or other properties. For example, correct memory handling and type safety. 
+
+
+Other critical reliability logic.  This can include the assurance of the correctness of policy, control, resilience and redundancy properties, expressed as constraints and obligations. For example, my data should stay within a specific geographic boundary (constraint) and my application should be active across multiple availability zones (obligation). Configuration policy analysis can be usefully applied to assess the self-integrity and policy conformance of configuration specifications prior to their use (to instantiate and continuously validate actual deployments based on that specification). It is, naturally, important to look for paradoxes between constraints and obligations. In the example above whether the obligation can be implemented without violating the constraint. It is vital that your policy as code / controls as code approaches are really managed as code with all the consequent testing and management.
+
+
+Requirements Engineering. Many, often the most pernicious, flaws in reliability come from failures to correctly define the right requirements and to ensure they flow through the development and testing process. This includes asserting pre- and post-conditions for critical reliability properties including security and business, or other control logic. This is where threat modeling can play a particularly important role - not just for security but for other types of reliability risks. 
+
+
+Developer Tool Integration. The classic “shift-left". This entails ensuring reliability support is included in the integrated development environments (IDE) used to develop or maintain code. This would be detection of flaws, auto-suggesting correct API calls and framework usage, test case generation support and many other properties. This should also be applied to code that is brought into the IDE or connected repositories either by import, cut/paste, AI-based or other code generation. Training of developers, while often done as a separate activity, is actually best thought of as something to integrate seamlessly into developer tooling.
+
+
+Build Pipeline and Software Assurance. Assure the security of the build pipeline itself including dependencies by conforming to the highest levels of a framework like SLSA. A big part of this is ensuring that software is continuously built and deployed (or at least shown to be deployable) having passed unit, integration, and wider regression tests. 
+
+
+Test Engineering and Business Controls Testing. Manual or automated construction of various tests from unit to integration. The key here, to take a broader reliability approach, is to ensure test coverage includes all the properties listed above from business, application, control, security and resiliency logic. This should include tests for adherence, irrespective of their enforcement in the IDE, with the correct use of security API or framework calls to ensure correct input validation, use of common application vulnerability mitigations (e.g. for CSRF) and marshaling secure calls to other libraries and APIs.  
+
+
+Chaos Engineering. A more extreme flavor of run time testing is to include security tests into your, so called, chaos engineering approach as well as resiliency tests. It can be especially useful to think of these as test harnesses to generate synthetic events to probe the effectiveness of the expected controls built into the software. From what I’ve seen most of the breach / attack simulation tools out there don’t think expansively enough to do this comprehensively. 
+
+
+Preventative Maintenance. Perhaps an obvious part of doing all of this is to ensure sufficient budget (people, time, compute and other resources) is allocated to do the work. It’s useful to contemplate explicitly budgeting for this in what might be termed a preventative maintenance budget. This would not only include activities to keep software dependencies patched and up to date but would also include test enhancements and IDE improvement. Going further, it is even more impactful to conduct thematic analysis of commonly occurring vulnerabilities to develop new or adjusted application frameworks to automatically mitigate those vulnerabilities. The obvious question will then be: how much to budget? This could start at something like 10% of overall budgets and then be mandated to go up or down according to need. For example, if a particular development team is experiencing many reliability failures then the proportion of the budget should increase to bring the situation under control. A proven reliable and stable environment will need less budget over time. This can be thought of as an extrapolation of SRE error budgets. Naturally, this is going to need some serious business line support as preventative maintenance will eat into budget that would otherwise be spent on features. But, if managed well this can further create the incentives to improve reliability. 
+
+
+Frameworks, Tools and API Security. As covered already, a big part of tackling the force of “code wants to be wrong” is to remove as much of the potential surface where such errors might occur. The common pattern is to look for the most commonly implemented functions, especially those that are most critical or have historically proven to exhibit the most issues and then create some framework or other tooling / API-accessible services to provide that function. But, in the spirit of putting all your eggs in one basket and watching the hell out of that basket, you’re going to need to put extraordinary effort into that framework and have it under the development of, or at least constantly scrutinized by, your most proficient security engineers. 
+
+
+Safe Languages / Execution Environments. Of course, many software security issues, and broader reliability issues, stem from human error induced by weaknesses in the programming language or environment the software is developed in. Adoption of safer languages like Rust and Go are proving effective here. Similarly, hardware support in the execution environment can improve reliability with more techniques coming for trusted execution and the reduction of common vulnerability patterns using memory capabilities such as CHERI.
+
+
+Compilation and Build Tool Configuration. In the same vein as languages and execution environments there’s a lot that can be done for reliability and security in picking the right compiler flags and other build settings to mitigate many common flaws. 
+
+
+Model Validation and Verification. As we start to bring in analytic or trained (ML) models into our software ecosystem, either in their own right or more often as adjuncts to conventional software, then the possibilities for reliability issues expand. So, testing and all the other elements we’ve discussed apply here as well, albeit with different techniques. 
+
+
+Test and Training Data Governance. As more tests are developed with wider coverage, and more analytic or ML based models are developed that require not only more test data but, especially, more expansive (and potentially sensitive) training data then the control over that data becomes paramount. This includes a broad range of expectations from mapping data lineage (the sources of that data, its integrity and other qualities), assuring privacy and access protection, establishing ongoing integrity and consistency of the test and training data through to regularly assuring the correct coverage and representation of the data. 
+
+
+Bottom line: if you focus solely on software security then it is hard to avoid straying into focusing on symptoms. The better course is to treat the root cause force and work on software reliability as means of delivering security as well as other essential properties like control assurance. 
+
+© 2020 Philip Venables. 

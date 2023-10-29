@@ -1,0 +1,104 @@
+Defense in Depth
+Defense in depth is a well accepted security principle. Intuitively, it stipulates there should be multiple lines of controls so as to reduce the likelihood of successful attacks even in the presence of some control bypasses. 
+
+
+I recently had cause to go looking for some research and commentary on this topic and there is surprisingly little. Most of the content is essentially a variant of the definition I just gave, together with examples of the need to deploy multiple controls, for example: to mitigate malware you have web, e-mail and end point controls in sequence. Most of the examples are given without much discussion of why they are effective. Various of the MITRE, NIST and related frameworks on the construction of preventative and detective controls are immensely useful but, again, seem to take the approach of simply layering lines of controls. Perhaps we are under-thinking this and taking for granted the real opportunities of defense in depth. 
+
+
+One of the common ways of explaining defense in depth is the, so called, Swiss cheese model which has its origins in the field of safety management. This model is problematic because it does not support defense in depth working at multiple dimensions from policy and governance to technical controls. This omission leads to viewing risk and risk mitigation as a simple chain of events without being able to look at the wider system which induced the design factors that led to the event. This is why defense in depth should be a systems concept not simply a controls concept. 
+
+
+Here’s an example from the excellent Engineering a Safer World book, where, one of many safety issues with DC-10 aircraft was attributed to insufficient maintenance on wing slats that led to an undetected crack which caused a crash. But the real issue was a design error that required such constant maintenance, which in turn was hard to do because of component placement, all of which had further root causes in the engineering and safety culture of the organization that led to such design compromises. In other words, a system wide issue required defense in depth which in turn because of the lack of connection and feedback between control layers led to increased pressure on those layers that ultimately led to multiple accidents - despite the defense in depth. 
+
+
+
+For an analogy closer to home for all of us, let’s look at the numerous incidents of Internet facing application breaches where, for example, a lack of a server being patched is attributed as the root cause. You could analyze this situation and correctly assert there was insufficient defense in depth of controls, for example: a multi-tier DMZ to increase the number of segmentation points, a higher assurance patching process, a more effective software pipeline to enable more frequent and reliable updates, in-line protective controls to mitigate attack traffic, and controls to prevent or detect post-attack exfiltration. This would all be correct. But then ask, what defense in depth didn’t exist at the organizational and technical governance levels that led to these omissions. Somewhere there was some decision, or omitted assessment, to not operate such controls. 
+
+
+So, we need to update our notion of defense in depth with a more modern framing. But, to be clear, this short blog post isn’t intending to be that full treatment but might perhaps stimulate others to do more work here. Let’s begin with a goal definition: 
+
+
+The goal of defense in depth is not just multiple layers of controls 
+to collectively mitigate one or more risks, but rather multiple layers of 
+inter-locking or inter-linked controls. 
+
+
+If there are N layers then the goal is not just a linear increase in control in proportion to N, but rather super-linear scaling of that effect. Defense in depth should also be fractal in that you need to construct defense in depth across the following domains and in turn within each of these domains:
+
+
+Technical controls
+
+
+Human controls
+
+
+Organizational risk governance - lines of defense not silos of defense, and
+
+
+Systemic risk governance and resilience
+
+
+In other words, the defense of a system overall (and I’m using system in the broadest sense here e.g. financial system, energy system) is about the interplay of layers of control at the organizational level, the human and technical component levels in those organizations as well as also having inter-locking layers of control in each one of the domains. It is also worth noting that defense in depth should not only provide defense from attacks but also from configuration errors. 
+
+
+Each technical control can be to prevent, detect, respond or recover in relation to a specific risk and can be deployed in multiple layers of a system architecture. There is a huge number of possible arrangements of controls to achieve defense in depth with little in the way of principles to guide us in how controls should be arrayed. The deployment of controls, or more likely, a subset of all the possible controls (given in reality some controls will mitigate multiple risks) is at best dictated by a formal threat model but more likely it is an artisanal arrangement built up over time by the judgement of multiple security engineers and other decision makers with rarely any analysis to revalidate this.  
+
+
+We need some principles to guide selection and placement of controls. Let’s take a shot at some:
+
+
+1. Architectural Placement 
+
+
+Complementary controls should exist at different points in an IT architecture. For example, it’s potentially wasteful to have multiple duplicative preventative anti-malware controls on the end point as the sole set of defense in depth. If you’re going to have defense in depth then you should have different controls across multiple layers such as web, e-mail and end point. 
+
+
+2. Dispersed Control Effect and Positive Duplication 
+
+
+Complementary controls should be a combination of generic and specific. For example, to continue the anti-malware example, exclude non allow-listed files or file types at one level and deploy specific signature based approaches at another level. The aim here is to have defensive layers take the pressure off each other by eliminating whole classes of attacks at least at one layer. A big part of this is to also look for positive duplication where no-one common possible cause of flaws is introduced on a critical control path. This could be ensuring duplicative or complementary controls from different teams in vendors, or different vendors, or otherwise positively vetted for high assurance of design. 
+
+
+3. Full Complementarity 
+
+
+Every preventative control should have a detective control at the same level and/or one level downstream in the architecture. That detective control should be configured to explicitly check that what should be stopped by the preventative controls actually is working correctly. Such complementarity can be exploited to set higher priority alerts and reduce false positives based on the knowledge of what should never be present. It is also useful to analyze the architecture to assure completeness of controls in such a way that there should be no detective control that isn’t also assuring the operation of a preventative control. 
+
+
+4. Continuous Assurance  / Continuous Control Monitoring
+
+
+Continuously assess the effect of your deployed controls by constantly validating their correct deployment and operation using monitoring and synthetic event generation. As part of doing this (informed also by actual attacks) look to develop a measure of what you might call a control pressure index, that is where you determine at what level in your defense in depth are specific attacks being stopped (by preventative controls and/or through a combination of detection and response). As the pressure on controls at more depth in your control structure is increasing then that is a signal for control redesign or the placement of more generic controls closer to the first point of attack - or the further bolstering of other layers of defense. 
+
+
+A big part of controls assurance is also to know that the control is actually operating - not just that the control has been ordered to operate. Real world examples (from Engineering a Safer World) are, again, illustrative. In this case, from a chemical control process, on the lessons to make sure control instrumentation actually measures the correct operation not just the assumed operation from detecting the control actuation signal. 
+
+
+
+
+
+5. Inter-Locking Defenses 
+
+
+Certain controls existing at multiple levels should be capable of interacting to be mutually reinforcing (although you will still likely want to preserve total isolation between other sets of controls). A great example of this is step-up authentication in the face of anomalous access activity, where a detective control flags a potentially anomalous access event but it’s not so certain as to trigger a clear response, rather it prompts a preventative control to be triggered to require strong(er) authentication to assure the identity of the principal attempting the access. Another example could be where you detect a failed signature on a run time deployment artifact, that you then invoke response and recovery controls to rebuild an environment from a prior known immutable image and trigger a preventative control stopping new deployments until an alert is cleared. 
+
+
+6. Transactional Operation 
+
+
+Ensuring transactional behavior between controls using ACID properties as much as can be achieved. For example, when logging critical activities have the log written before the action is done and commit the log after the action is complete so that presence of an action in a log is known to have actually occurred. 
+
+ 
+7. Tipping and Cueing
+
+
+Design complementary detective controls to tip and cue off each other. Tipping and cueing is a concept from geo-spatial and signals intelligence and related fields where deep surveillance instrumentation is limited in coverage and so a broader surveillance "tip" is generated to cue the tasking or focusing of more specific finer grained collection as a result. For example, if you can't realistically record all your traffic flows for forensic purposes then at least define flow recording triggers from other broader, more coarse grained, detective capability. It’s also good to tip and cue preventative and detective controls where for usability or other reasons you can’t run with full safeties on but are prepared to do so in the presence of suspected threats. This is especially useful in insider threat situations. 
+
+
+__________________________________
+
+
+
+Bottom line: defense in depth is not just about the arbitrary layering of controls to achieve hoped for outcomes, rather defense in depth is about the linkage and collected effect of controls. 
+
+© 2020 Philip Venables. 
